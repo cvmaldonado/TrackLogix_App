@@ -13,7 +13,7 @@ export class RegisterPage {
     mail: '',
     password: '',
     phone_number: ''
-    // Agrega otros campos según tu API y requisitos
+    // Se gregan los campos según los requisitos del API
   };
 
   constructor(private registerService: RegisterService) {}

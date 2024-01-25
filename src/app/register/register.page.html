@@ -1,28 +1,32 @@
 <!-- register.page.html -->
 
-<ion-content>
-  <form (ngSubmit)="submitForm()">
-    <ion-item>
-      <ion-label position="floating">Nombre</ion-label>
-      <ion-input [(ngModel)]="userDetails.name" name="name" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Apellido</ion-label>
-      <ion-input [(ngModel)]="userDetails.last_name" name="lastName" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Correo Electrónico</ion-label>
-      <ion-input [(ngModel)]="userDetails.mail" name="mail" type="email" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input [(ngModel)]="userDetails.password" name="password" type="password" required></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Número de Teléfono</ion-label>
-      <ion-input [(ngModel)]="userDetails.phone_number" name="phoneNumber" type="tel" required></ion-input>
-    </ion-item>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="submitForm()" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="userDetails.name" name="name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="last_name" [(ngModel)]="userDetails.last_name" name="last_name" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="mail" class="form-label">Correo Electrónico</label>
+      <input type="email" class="form-control" id="mail" [(ngModel)]="userDetails.mail" name="mail" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="userDetails.password" name="password" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Número de Teléfono</label>
+      <input type="tel" class="form-control" id="phone_number" [(ngModel)]="userDetails.phone_number" name="phone_number" required>
+    </div>
     
-    <ion-button type="submit" expand="full">Registrarse</ion-button>
+    <button type="submit" class="btn btn-primary">Registrarse</button>
   </form>
 </ion-content>

@@ -1,13 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- login.page.html -->
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <form (ngSubmit)="submitForm()" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="mail" class="form-label">Nombre de Usuario</label>
+      <input type="text" class="form-control" id="mail" [(ngModel)]="loginDetails.mail" name="mail" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="loginDetails.password" name="password" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+  </form>
 </ion-content>

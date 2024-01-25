@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterService } from '../register/register.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
+
+  loginDetails = {
+    mail: '',
+    password: ''
+
+  };
 
   constructor() { }
 
-  ngOnInit() {
-    console.log('login page');
+  submitForm() {
+    // Se realiza el envío del formulario
+    console.log('Formulario enviado:', this.loginDetails);
   }
 }
