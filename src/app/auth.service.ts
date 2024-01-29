@@ -1,40 +1,73 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+interface userData {
+  mail: string;
+  password: string;
+}
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AuthService {
-  private backendAPIs = 'http://localhost:3000/'; // Se asigna la ruta del servidor de nodejs
-  private authToken = 'auth_token'; // Se asigna el nombre del token que se almacenará en el localStorage
+export class authService {
+  private backendAPIS = 'http://localhost:3000/';
 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  loginUser(loginDetails: any): Observable<any> {
-    return this.http.post(`${this.backendAPIs}api/login`, loginDetails); 
+  getAPI() {
+    return this.http.get(`${this.backendAPIS}api/`);
+  }
+  registerUser(userData: {
+    name: string;
+    last_name: string;
+    code: string;
+    mail: string;
+    phone_number: string;
+    password: string;
+  }) {
+    return this.http.post(`${this.backendAPIS}api/register`, userData);
   }
 
-  // Se crea el método para almacenar el token en el localStorage
-  setToken(token: string): void {
-    localStorage.setItem(this.authToken, token);
+  loginUser(userData: userData) {
+    return this.http.post(`${this.backendAPIS}api/login`, userData);
   }
 
-  // Se crea el método para obtener el token que ya se encuentra almacenado en el localStorage
-  getToken(): string | null {
-    return localStorage.getItem(this.authToken);
+  setToken(token: string) {
+    localStorage.setItem('token', token);
   }
 
-  // Se verifica si el usuario ya se encuentra autenticado
-  isAuthenticated(): boolean {
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  getInfo() {
     const token = this.getToken();
-    return !!token; // Si el token existe, retorna true, de lo contrario retorna false
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get(`${this.backendAPIS}api/readInfo`, { headers });
   }
 
-  //Cerrar sesión
-  logout(): void {
-    localStorage.removeItem(this.authToken);
+  getPackages(){
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get(`${this.backendAPIS}api/readPackages`, { headers });
+  }
+  updateInfo(updatedData: {
+    name: string;
+    last_name: string;
+    code: string;
+    mail: string;
+    phone_number: string;
+  }) {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.put(
+      `${this.backendAPIS}/api/updateProfile`,
+      updatedData,
+      { headers }
+    );
+  }
+  isLoggedIn(): boolean {
+    const token = this.getToken();
+    return !!token;
   }
 }

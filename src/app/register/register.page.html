@@ -1,7 +1,7 @@
 <!-- register.page.html -->
 
 <ion-content class="ion-padding">
-  <form (ngSubmit)="submitForm()" class="needs-validation" novalidate>
+  <form (ngSubmit)="registerUser()" novalidate>
     <div class="mb-3">
       <label for="name" class="form-label">Nombre</label>
       <input type="text" class="form-control" id="name" [(ngModel)]="userDetails.name" name="name" required>

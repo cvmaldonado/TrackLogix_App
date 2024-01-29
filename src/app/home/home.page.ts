@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { authService } from '../auth.service';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +8,23 @@ import { AuthService } from '../auth.service';
   styleUrls: ['home.page.scss'],
 })
 
-export class HomePage {
-
+export class HomePage implements OnInit {
   isLoggedIn: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: authService, private router: Router) {}
 
-  //Se verifica si el usuario ya se encuentra autenticado
   ngOnInit() {
-    this.isLoggedIn = this.authService.isAuthenticated();
-  }
-  goToHomePage() {
-    this.router.navigate(['/home']);
+    // Verificar si el usuario está autenticado al cargar la página
+    this.checkAuthentication();
   }
 
+  checkAuthentication() {
+    // Utiliza el servicio para verificar si el usuario está autenticado
+    this.isLoggedIn = this.authService.isLoggedIn();
+
+    // Si el usuario está autenticado, redirige a la página de perfil
+    if (this.isLoggedIn) {
+      this.router.navigate(['/home']);
+    }
+  }
 }

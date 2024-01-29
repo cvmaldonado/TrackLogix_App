@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RegisterService } from './register.service';
+import { authService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,27 +8,28 @@ import { RegisterService } from './register.service';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
+  alertButtons = ['Action'];
   userDetails = {
     name: '',
     last_name: '',
+    code: '',
     mail: '',
-    password: '',
-    phone_number: ''
-    // Se gregan los campos según los requisitos del API
+    phone_number: '',
+    password: ''
   };
 
-  constructor(private registerService: RegisterService) {}
+  constructor(private authService: authService, private router: Router ) { }
 
-  submitForm() {
-    this.registerService.register(this.userDetails).subscribe(
-      (res) => {
-        console.log('Registro exitoso:', res);
-        // Puedes redirigir a otra página o realizar otras acciones después del registro exitoso
+  registerUser() {
+    this.authService.registerUser(this.userDetails).subscribe(
+      (data) => {
+        console.log(data);
+        this.router.navigateByUrl('/login'); // redirige a la página de inicio de sesión
       },
-      (err) => {
-        console.error('Error durante el registro:', err);
-        // Manejar errores del servidor, mostrar mensajes de error, etc.
+      (error) => {
+        console.error('Error:', error);
       }
     );
   }
 }
+

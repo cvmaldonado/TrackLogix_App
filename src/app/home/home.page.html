@@ -4,6 +4,7 @@
   <ion-toolbar>
     <ion-title>
       Página de inicio
+
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,20 +13,22 @@
   <!-- Contenido de tu página de inicio -->
 
   <!-- Menú de pestañas en la parte inferior -->
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="profile" routerLink="/home/profile">
-      <ion-icon name="person"></ion-icon>
-      <ion-label>Perfil</ion-label>
-    </ion-tab-button>
+  <!-- Menú de pestañas en la parte inferior -->
+  <ion-tabs>
+    <ion-tab-bar routerLink="home">
+      <ion-tab-button tab="home">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button routerLink="/packages">
+        <ion-icon name="cube"></ion-icon>
+        Packages
+      </ion-tab-button>
+      <ion-tab-button routerLink="/profile">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 
-    <ion-tab-button tab="packages" routerLink="/home/packages">
-      <ion-icon name="cube"></ion-icon>
-      <ion-label>Paquetes</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button (click)="goToHomePage()">
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Inicio</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
 </ion-content>

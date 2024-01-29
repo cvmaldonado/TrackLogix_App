@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+// login.page.ts
 
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { authService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,26 +10,29 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-
-  loginDetails = {
+  userDetails = {
     mail: '',
     password: ''
-
   };
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: authService, private router: Router) { }
 
-  submitForm() {
-    this.authService.loginUser(this.loginDetails).subscribe(
-      (response) => {
-        const authToken = response.token;
+  loginUser() {
+    this.authService.loginUser(this.userDetails).subscribe(
+      (data: any) => {
+        console.log(data); // Se Imprimen los datos para verificar su estructura
 
-        this.authService.setToken(authToken);
+        if (data && data.token) { 
+          this.authService.setToken(data.token); // Guarda el token en el almacenamiento local
+          this.router.navigateByUrl('/home');
+          console.log('Token obtenido')
+        } else {
+          console.error('Error: No se recibió el token');
 
-        this.router.navigate(['/home']);
+        }
       },
       (error) => {
-        console.log('Error al iniciar sesión: ', error);
+        console.error('Error:', error);
       }
     );
   }

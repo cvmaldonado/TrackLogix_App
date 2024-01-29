@@ -1,0 +1,43 @@
+<ion-content class="mi-pagina">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Perfil del Cliente
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del Cliente</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Nombre:</strong> {{userData?.name}}</p>
+      <p><strong>Apellido:</strong> {{userData?.last_name}}</p>
+      <p><strong>Código:</strong> {{userData?.code}}</p>
+      <p><strong>Email:</strong> {{userData?.mail}}</p>
+      <p><strong>Teléfono:</strong> {{userData?.phone_number}}</p>
+
+    </ion-card-content>
+
+    <ion-tabs>
+      <ion-tab-bar routerLink="/home">
+        <ion-tab-button tab="home">
+          <ion-icon name="home"></ion-icon>
+          Home
+        </ion-tab-button>
+        <ion-tab-button routerLink="/packages">
+          <ion-icon name="cube"></ion-icon>
+          Packages
+        </ion-tab-button>
+        <ion-tab-button routerLink="profile">
+          <ion-icon name="person"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+
+
+  </ion-card>
