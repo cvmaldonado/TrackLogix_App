@@ -14,7 +14,8 @@ export class ProfilePage {
         text: ' Delete Account',
         role: 'destructive',
         handler: () => {
-          
+          this.deleteAcount();
+          this.router.navigate(['/register']);
         },
       },
       {
@@ -60,6 +61,17 @@ export class ProfilePage {
       },
       (error)=> {
         this.isActionSheetOpen = true;
+        console.log('ERRRORR', error)
+      }
+    )
+  }
+
+  deleteAcount(){
+    this.authService.deleteAcount().subscribe(
+      (data) => {
+        console.log('Datos de usuario:', data);
+      },
+      (error)=> {
         console.log('ERRRORR', error)
       }
     )

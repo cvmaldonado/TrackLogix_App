@@ -1,42 +1,42 @@
 <!-- register.page.html -->
 
-<ion-content class="ion-padding">
-  <form (ngSubmit)="registerUser()" novalidate>
-    <div class="mb-3">
-      <label for="name" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="name" [(ngModel)]="userDetails.name" name="name" required>
-    </div>
+<ion-content class="ion-padding" fullscreen>
+  <ion-grid class="ion-justify-content-center ion-align-items-center">
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <form (ngSubmit)="registerUser()" novalidate>
+          <div class="form-group">
+            <input type="text" class="form-control" id="name" [(ngModel)]="userDetails.name" name="name" required placeholder="Nombre">
+          </div>
 
-    <div class="mb-3">
-      <label for="lastName" class="form-label">Apellido</label>
-      <input type="text" class="form-control" id="last_name" [(ngModel)]="userDetails.last_name" name="last_name" required>
-    </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="last_name" [(ngModel)]="userDetails.last_name" name="last_name" required placeholder="Apellido">
+          </div>
 
-    <div class="mb-3">
-      <label for="mail" class="form-label">Correo Electrónico</label>
-      <input type="email" class="form-control" id="mail" [(ngModel)]="userDetails.mail" name="mail" required>
-    </div>
+          <div class="form-group">
+            <input type="email" class="form-control" id="mail" [(ngModel)]="userDetails.mail" name="mail" required placeholder="Correo Electrónico">
+          </div>
 
-    <div class="mb-3">
-      <label for="password" class="form-label">Contraseña</label>
-      <input type="password" class="form-control" id="password" [(ngModel)]="userDetails.password" name="password" required>
-    </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" [(ngModel)]="userDetails.password" name="password" required placeholder="Contraseña">
+          </div>
 
-    <div class="mb-3">
-      <label for="phoneNumber" class="form-label">Número de Teléfono</label>
-      <input type="tel" class="form-control" id="phone_number" [(ngModel)]="userDetails.phone_number" name="phone_number" required>
-    </div>
-    
-    <ion-button type="submit" (click)="setOpen(false)">Registrarse</ion-button>
+          <div class="form-group">
+            <input type="tel" class="form-control" id="phone_number" [(ngModel)]="userDetails.phone_number" name="phone_number" required placeholder="Número de Teléfono">
+          </div>
+          
+          <ion-button type="submit" expand="block" (click)="setOpen(false)">Registrarse</ion-button>
 
-    <ion-alert
-  [isOpen]="isAlertOpen"
-  header="Por favor complete los campos requeridos."
-  subHeader=""
-  message="Revise que todos los campos estén completos."
-  [buttons]="alertButtons"
-  (didDismiss)="setOpen(false)"
-></ion-alert>
-  </form>
-
+          <ion-alert
+            [isOpen]="isAlertOpen"
+            header="Por favor complete los campos requeridos."
+            subHeader=""
+            message="Revise que todos los campos estén completos."
+            [buttons]="alertButtons"
+            (didDismiss)="setOpen(false)"
+          ></ion-alert>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

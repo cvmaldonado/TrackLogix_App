@@ -65,6 +65,12 @@ export class authService {
       { headers }
     );
   }
+
+  deleteAcount() {
+    const token = this.getToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.delete(`${this.backendAPIS}api/deleteAcount`, { headers });
+  }
   isLoggedIn(): boolean {
     const token = this.getToken();
     return !!token;

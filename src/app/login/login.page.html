@@ -1,27 +1,30 @@
-<!-- login.page.html -->
-
 <ion-content class="ion-padding">
-  <form (ngSubmit)="loginUser()" class="login-form" novalidate>
-    <div class="form-group">
-      <label for="mail">Nombre de Usuario</label>
-      <input type="text" class="form-control" id="mail" [(ngModel)]="userDetails.mail" name="mail" required>
-    </div>
+  <ion-grid class="ion-align-items-center ion-justify-content-center">
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <form (ngSubmit)="loginUser()" class="login-form" novalidate>
+          <div class="form-group">
+            <label for="mail" class="form-label">Nombre de Usuario</label>
+            <input type="text" class="form-control" id="mail" [(ngModel)]="userDetails.mail" name="mail" required placeholder="Ingrese su correo electrónico">
+          </div>
 
-    <div class="form-group">
-      <label for="password">Contraseña</label>
-      <input type="password" class="form-control" id="password" [(ngModel)]="userDetails.password" name="password" required>
-    </div>
+          <div class="form-group">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="userDetails.password" name="password" required placeholder="Contraseña">
+          </div>
 
-    <ion-button type="submit" (click)="setOpen(false)"> Login</ion-button>
+          <ion-button type="submit" (click)="setOpen(false)"> Login</ion-button>
 
-    <ion-alert
-  [isOpen]="isAlertOpen"
-  header="Por favor complete los campos requeridos."
-  subHeader=""
-  message="Revise que todos los campos estén completos."
-  [buttons]="alertButtons"
-  (didDismiss)="setOpen(false)"
-></ion-alert>
-
-  </form>
+          <ion-alert
+            [isOpen]="isAlertOpen"
+            header="Por favor complete los campos requeridos."
+            subHeader=""
+            message="Revise que todos los campos estén completos."
+            [buttons]="alertButtons"
+            (didDismiss)="setOpen(false)"
+          ></ion-alert>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

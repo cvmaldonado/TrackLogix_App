@@ -3,20 +3,22 @@
 /* Estilos para el fondo */
 ion-content {
     --background: linear-gradient(135deg, #92C7CF, #E5E1DA);
+    
   }
   
   /* Estilos para el formulario */
   .login-form {
     max-width: 300px;
     margin: auto;
-    padding: 20px;
+    width: 100%;
+    padding: 10px;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .login-form .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   
   .login-form label {
@@ -26,9 +28,9 @@ ion-content {
   .login-form input[type="text"],
   .login-form input[type="password"] {
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 30px;
+    border: 0px solid #ccc;
   }
   
   .login-form button {
