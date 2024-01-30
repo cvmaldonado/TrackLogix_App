@@ -51,17 +51,16 @@ export class authService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get(`${this.backendAPIS}api/readPackages`, { headers });
   }
-  updateInfo(updatedData: {
+  editInfo(updatedData: {
     name: string;
     last_name: string;
-    code: string;
     mail: string;
     phone_number: string;
   }) {
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.put(
-      `${this.backendAPIS}/api/updateProfile`,
+      `${this.backendAPIS}api/updateInfo`,
       updatedData,
       { headers }
     );

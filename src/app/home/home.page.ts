@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 
 export class HomePage implements OnInit {
+  
   isLoggedIn: boolean = false;
 
   constructor(private authService: authService, private router: Router) {}

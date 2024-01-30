@@ -1,43 +1,45 @@
-<ion-content class="mi-pagina">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>
-        Perfil del Cliente
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-header [translucent]="true">
+  <ion-toolbar style="background-color: #D9D9D9; border: #92C7CF;">
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content>
+  <ion-card-header>
+    <ion-card-title class="texto-negro">Información del Cliente</ion-card-title>
+  </ion-card-header>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Información del Cliente</ion-card-title>
-    </ion-card-header>
+  <ion-card-content class="texto-negro">
+    <p><strong>Nombre:</strong> {{userData?.name}}</p>
+    <p><strong>Apellido:</strong> {{userData?.last_name}}</p>
+    <p><strong>Código:</strong> {{userData?.code}}</p>
+    <p><strong>Email:</strong> {{userData?.mail}}</p>
+    <p><strong>Teléfono:</strong> {{userData?.phone_number}}</p>
+  </ion-card-content>
+ 
+  <!-- -->
+  <ion-tabs>
+    <ion-button (click)="setOpen(true)">Opciones avanzadas</ion-button>
+    <ion-action-sheet
+      [isOpen]="isActionSheetOpen"
+      header="Acciones"
+      [buttons]="actionSheetButtons"
+      (ionActionSheetDidDismiss)="setOpen(false)"
+    ></ion-action-sheet>
 
-    <ion-card-content>
-      <p><strong>Nombre:</strong> {{userData?.name}}</p>
-      <p><strong>Apellido:</strong> {{userData?.last_name}}</p>
-      <p><strong>Código:</strong> {{userData?.code}}</p>
-      <p><strong>Email:</strong> {{userData?.mail}}</p>
-      <p><strong>Teléfono:</strong> {{userData?.phone_number}}</p>
-
-    </ion-card-content>
-
-    <ion-tabs>
-      <ion-tab-bar routerLink="/home">
-        <ion-tab-button tab="home">
-          <ion-icon name="home"></ion-icon>
-          Home
-        </ion-tab-button>
-        <ion-tab-button routerLink="/packages">
-          <ion-icon name="cube"></ion-icon>
-          Packages
-        </ion-tab-button>
-        <ion-tab-button routerLink="profile">
-          <ion-icon name="person"></ion-icon>
-          <ion-label>Profile</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
-    </ion-tabs>
-
-
-  </ion-card>
+    <ion-tab-bar  style="background-color: #92C7CF; border: #92C7CF;" slot="bottom">
+      <ion-tab-button style="background-color: #92C7CF;" routerLink="/home">
+        <ion-icon style="color: rgb(52, 52, 52); border-color: #484848; border: 1px;" name="home"></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button style="background-color: #92C7CF;" routerLink="/packages">
+        <ion-icon style="color: rgb(52, 52, 52); border-color: #484848; border: 1px;" name="cube"></ion-icon>
+        Packages
+      </ion-tab-button>
+      <ion-tab-button style="background-color: #92C7CF;" routerLink="/profile">
+        <ion-icon style="color: rgb(52, 52, 52); border-color: #484848; border: 1px;" name="person"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

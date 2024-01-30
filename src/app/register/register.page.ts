@@ -8,7 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
-  alertButtons = ['Action'];
+  isAlertOpen = false;
+  alertButtons = ['Aceptar'];
+
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
   userDetails = {
     name: '',
     last_name: '',
@@ -25,11 +30,16 @@ export class RegisterPage {
       (data) => {
         console.log(data);
         this.router.navigateByUrl('/login'); // redirige a la página de inicio de sesión
+        
       },
       (error) => {
-        console.error('Error:', error);
+        this.isAlertOpen = true;
+        console.error('Error SISISISI:', error);
+        
       }
     );
   }
+
+  
 }
 

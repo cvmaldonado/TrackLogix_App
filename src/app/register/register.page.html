@@ -27,6 +27,16 @@
       <input type="tel" class="form-control" id="phone_number" [(ngModel)]="userDetails.phone_number" name="phone_number" required>
     </div>
     
-    <button type="submit" class="btn btn-primary">Registrarse</button>
+    <ion-button type="submit" (click)="setOpen(false)">Registrarse</ion-button>
+
+    <ion-alert
+  [isOpen]="isAlertOpen"
+  header="Por favor complete los campos requeridos."
+  subHeader=""
+  message="Revise que todos los campos estén completos."
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)"
+></ion-alert>
   </form>
+
 </ion-content>

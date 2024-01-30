@@ -10,6 +10,13 @@ import { authService } from '../auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
+  isAlertOpen = false;
+  alertButtons = ['Ok'];
+
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
+
   userDetails = {
     mail: '',
     password: ''
@@ -32,6 +39,7 @@ export class LoginPage {
         }
       },
       (error) => {
+        this.isAlertOpen = true;
         console.error('Error:', error);
       }
     );
