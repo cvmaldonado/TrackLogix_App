@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'packages',
     loadChildren: () => import('./packages/packages.module').then( m => m.PackagesPageModule)
   },
+  {
+    path: 'updates',
+    loadChildren: () => import('./updates/updates.module').then( m => m.UpdatesPageModule)
+  },
 
 ];
 

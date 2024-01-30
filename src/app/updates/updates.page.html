@@ -1,0 +1,25 @@
+<!-- updates.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar style="background-color: #D9D9D9; border: #92C7CF;">
+    <ion-title>Actualizar Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="updateInfo()" #updateForm="ngForm">
+    <ion-item>
+      <ion-input type="text" name="name" label="Nombre" [(ngModel)]="userData.name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="last_name" label="Apellido" [(ngModel)]="userData.last_name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="email" name="mail" label="Email" [(ngModel)]="userData.mail" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="tel" name="phone_number" label="Phone" [(ngModel)]="userData.phone_number" required></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="block">Guardar Cambios</ion-button>
+  </form>
+</ion-content>

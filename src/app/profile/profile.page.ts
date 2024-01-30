@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {authService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -13,13 +14,13 @@ export class ProfilePage {
         text: ' Delete Account',
         role: 'destructive',
         handler: () => {
-
+          
         },
       },
       {
         text: 'Edit Account',
         handler: () => {
-          this.editInfo();
+          this.router.navigate(['/updates']);
         },
       },
       {
@@ -37,7 +38,7 @@ export class ProfilePage {
   
   //
   userData: any;
-  constructor(private authService: authService) { 
+  constructor(private authService: authService, private router: Router) {
     this.getInfo();
   }
   getInfo(){
