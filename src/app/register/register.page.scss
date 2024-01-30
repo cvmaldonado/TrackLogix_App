@@ -5,39 +5,44 @@ ion-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 form {
   max-width: 350px;
   width: 100%;
   margin-top: 20vh;
-
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-group {
-  margin-bottom: 0px; 
-
-
+  margin-bottom: 20px;
 }
 
 .form-control {
-  border: 1px solid #E5E1DA; 
+  border: 1px solid #D0D0D0; /* Cambia el color del borde */
+  background-color: #E5E1DA; /* Cambia el color de fondo */
   border-radius: 30px;
-  padding: 25px;
+  padding: 15px;
   width: 100%;
 }
 
-.btn-primary {
-  background-color: #E5E1DA; /* Cambia el color de fondo del botón */
-  color: #E5E1DA;
-  border: none;
-  border-radius: 5px;
-  padding: 12px 24px;
-  font-size: 16px;
-  transition: background-color 0.3s;
+.btn-primary:hover {
+  background-color: #00ff0d; 
+}
+ion-button {
+  --background: #AAD7D9;
+  --border-radius: 30px;
+  width: 75%;
+}
+.texto-negro {
+  color: rgb(107, 107, 107);
 }
 
-.btn-primary:hover {
-  background-color: #45a049;
+.login-link {
+  color: #ffffff; 
+  cursor: pointer; 
+  text-decoration: underline; 
+  font-weight: bold; 
 }

@@ -25,7 +25,9 @@
             <input type="tel" class="form-control" id="phone_number" [(ngModel)]="userDetails.phone_number" name="phone_number" required placeholder="Número de Teléfono">
           </div>
           
-          <ion-button type="submit" expand="block" (click)="setOpen(false)">Registrarse</ion-button>
+          <ion-button type="submit"  (click)="setOpen(false)" class="texto-negro">Registrarse</ion-button>
+          <p></p>
+          <span class="login-link" (click)="redirectToLoginPage()">¿Ya tienes una cuenta? Inicia Sesión</span>
 
           <ion-alert
             [isOpen]="isAlertOpen"

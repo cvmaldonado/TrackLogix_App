@@ -2,25 +2,27 @@
 
 /* Estilos para el fondo */
 ion-content {
-    --background: linear-gradient(135deg, #92C7CF, #E5E1DA);
+    --background: linear-gradient(135deg, #92C7CF, #fce8c6);
     
   }
   
   /* Estilos para el formulario */
   .login-form {
-    max-width: 300px;
-    margin: auto;
+    max-width: 310px;
+    margin: center;
     width: 100%;
-    padding: 10px;
-    background: #fff;
+    height: 100%;
+    padding: 15px;
+    background: #FBF9F1;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20vh;
+    margin-top: 15vh;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
 
   .login-form .form-group {
-    margin-bottom: 0px;
+    margin-bottom: 30px;
   }
   
   .login-form label {
@@ -40,15 +42,37 @@ ion-content {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 1px;
     background-color: #007bff;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+
+  .form-control {
+    border: 1px solid #D0D0D0; 
+    background-color: #E5E1DA; 
+    border-radius: 30px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  ion-button {
+    --background: #AAD7D9;
+    --border-radius: 30px;
+    width: 75%;
+  }
   
   .login-form button:hover {
-    background-color: #0056b3;
+    background-color: #00ddff;
   }
+
+  .register-link {
+    color: #AAD7D9; 
+    cursor: pointer; 
+    text-decoration: underline; 
+    font-weight: bold; 
+  }
+  
   

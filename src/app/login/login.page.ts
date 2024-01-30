@@ -44,4 +44,7 @@ export class LoginPage {
       }
     );
   }
+  redirectToRegisterPage() {
+    this.router.navigateByUrl('/register');
+  }
 }

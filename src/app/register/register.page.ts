@@ -40,6 +40,9 @@ export class RegisterPage {
     );
   }
 
+  redirectToLoginPage() {
+    this.router.navigateByUrl('/login');
+  }
   
 }
 
