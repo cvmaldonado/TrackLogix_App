@@ -71,6 +71,11 @@ export class authService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete(`${this.backendAPIS}api/deleteAcount`, { headers });
   }
+
+  logout() {
+    localStorage.removeItem('token');
+  }
+  
   isLoggedIn(): boolean {
     const token = this.getToken();
     return !!token;

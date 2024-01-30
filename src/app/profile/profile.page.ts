@@ -25,6 +25,13 @@ export class ProfilePage {
         },
       },
       {
+        text: 'Log Out',
+        handler: () => {
+          this.authService.logout();
+          this.router.navigate(['/login']);
+        },
+      },
+      {
         text: 'Cancel',
         role: 'cancel',
         data: {

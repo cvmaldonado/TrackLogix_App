@@ -10,6 +10,8 @@
     <ion-card-title class="texto-negro">Información de paquetes</ion-card-title>
   </ion-card-header>
 
+  <ng-container *ngIf="packegesData && packegesData.length > 0; else noPackages">
+
   <!-- Iterar sobre cada paquete y mostrarlo en un ion-card -->
   <ion-card *ngFor="let package of packegesData">
     <ion-card-header>
@@ -23,6 +25,10 @@
       <p><strong>Estatus:</strong> {{ package.status_id }}</p>
     </ion-card-content>
   </ion-card>
+  </ng-container>
+  <ng-template #noPackages>
+    <p class="texto-negro">No hay paquetes disponibles.</p>
+  </ng-template>
 
   <ion-tabs>
     <ion-tabs>
