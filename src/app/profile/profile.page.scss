@@ -1,42 +1,93 @@
 ion-content {
-    --ion-background-color: #E5E1DA;
-  }
-  
-  ion-tab-bar {
-    background-color: #92C7CF;
-  }
-  #container {
-    text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  #container strong {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  
-  #container p {
-    font-size: 16px;
-    line-height: 22px;
-    color: #8c8c8c;
-    margin: 0;
-  }
-  
-  #container a {
-    text-decoration: none;
-  }
-  
-  .force-show {
-    display: block !important;
-  }
-  .texto-negro {
-    color: rgba(72, 72, 72);
-  }
+  --ion-background-color: #E5E1DA;
+}
+
+ion-tab-bar {
+  background-color: #AAD7D9;
+}
+
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.force-show {
+  display: block !important;
+}
+
+.texto-negro {
+  color: rgba(72, 72, 72);
+}
+
+ion-button {
+  --background: #7b888a;
+  --border-radius: 30px;
+  margin-top: 20px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+ion-card {
+  --background: #E5E1DA;
+  --border-radius: 50px;
+  width: auto;
+  height: 80vh;
+}
+ion-card-header {
+  text-align: center; 
+  font-size: 24px;
+  --color: #2d3e3b;
+
+}
 
 
-  
-  
+
+// Settings menu
+
+ion-action-sheet {
+  --background: linear-gradient(135deg, #92C7CF, #fce8c6);
+  --backdrop-opacity: 0.6;
+  --button-background-selected: linear-gradient(135deg, #92C7CF, #fce8c6);
+  --button-color: #000000;
+  --color: #fff;
+  /* role: "destructive" button iOS styling override */
+  --ion-color-danger: #000000;
+}
+
+ion-item {
+  --padding-start: 0;
+  --background: #E5E1DA;
+  --border-top: 19px;
+  color: #000000; /* Color de texto negro */
+
+  ion-icon {
+      color: #8c8c8c; /* Color de los íconos gris */
+      margin-top: 30px;
+    }
+
+  ion-label {
+      margin-bottom: 10px; /* Espacio entre cada dato */
+  }
+}
+
+

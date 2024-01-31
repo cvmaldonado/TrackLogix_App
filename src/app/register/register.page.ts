@@ -26,6 +26,7 @@ export class RegisterPage {
   constructor(private authService: authService, private router: Router ) { }
 
   registerUser() {
+    if(this.isFormValid()){
     this.authService.registerUser(this.userDetails).subscribe(
       (data) => {
         console.log(data);
@@ -38,7 +39,19 @@ export class RegisterPage {
         
       }
     );
+  } else {
+    this.isAlertOpen = true;
   }
+}
+isFormValid(): boolean {
+  return !!(
+    this.userDetails.name &&
+    this.userDetails.last_name &&
+    this.userDetails.mail &&
+    this.userDetails.phone_number &&
+    this.userDetails.password
+  );
+}
 
   redirectToLoginPage() {
     this.router.navigateByUrl('/login');

@@ -1,26 +1,51 @@
 <ion-header [translucent]="true">
-  <ion-toolbar style="background-color: #D9D9D9; border: #92C7CF;">
-    <ion-title>Profile</ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card-header>
-    <ion-card-title class="texto-negro">Información del Cliente</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content class="texto-negro">
-    <p><strong>Nombre:</strong> {{userData?.name}}</p>
-    <p><strong>Apellido:</strong> {{userData?.last_name}}</p>
-    <p><strong>Código:</strong> {{userData?.code}}</p>
-    <p><strong>Email:</strong> {{userData?.mail}}</p>
-    <p><strong>Teléfono:</strong> {{userData?.phone_number}}</p>
-  </ion-card-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-label>Bienvenido {{ userData?.name }}</ion-label>
+    </ion-card-header>
+    <ion-card-content class="texto-negro">
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon name="person"></ion-icon>
+          </ion-thumbnail>
+          <ion-label style="padding-bottom: 5px;">Nombre:<br/><br/>{{ userData?.name }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon name="person"></ion-icon>
+          </ion-thumbnail>
+          <ion-label>Apellido:<br/><br/>{{ userData?.last_name }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon name="barcode"></ion-icon>
+          </ion-thumbnail>
+          <ion-label>Código:<br/><br/>{{ userData?.code }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon name="mail"></ion-icon>
+          </ion-thumbnail>
+          <ion-label>Email: <br/><br/>{{ userData?.mail }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon name="call"></ion-icon>
+          </ion-thumbnail>
+          <ion-label>Teléfono:<br/><br/>{{ userData?.phone_number }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
  
   <!-- -->
   <ion-tabs>
-    <ion-button (click)="setOpen(true)" class="opciones-avanzadas">Opciones avanzadas</ion-button>
-    <ion-action-sheet
+    <ion-button (click)="setOpen(true)" id="open-action-sheet" >Opciones avanzadas</ion-button>
+    <ion-action-sheet class="texto-negro"
     [isOpen]="isActionSheetOpen"
     header="Opciones"
     [buttons]="actionSheetButtons"

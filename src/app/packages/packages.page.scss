@@ -36,5 +36,30 @@ ion-content {
 
   .texto-negro {
     color: rgba(72, 72, 72);
+    text-align: center;
   }
+
+  .texto-sinpaquetes{
+    color: rgba(72, 72, 72);
+    text-align: center;
+    margin-top: 76%;
+
+  }
+
+  .text-subtitle{
+    color: rgba(72, 72, 72);
+  }
+  
+  ion-card {
+    --background: #E5E1DA;
+    --border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  ion-card-header {
+
+    font-size: 24px;
+    --color: #2d3e3b;
+  }
+  
   

@@ -1,7 +1,4 @@
 <ion-header [translucent]="true">
-  <ion-toolbar style="background-color: #D9D9D9; border: #92C7CF;">
-    <ion-title>packages</ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -16,18 +13,18 @@
   <ion-card *ngFor="let package of packegesData">
     <ion-card-header>
       <!-- Utilizar las propiedades de cada paquete para el título y subtítulo -->
-      <ion-card-title>{{ package.tracking }}</ion-card-title>
-      <ion-card-subtitle>{{ package.weight }}</ion-card-subtitle>
+      <ion-card-title class="text-subtitle" >{{ package.tracking }}</ion-card-title>
+      <ion-card-subtitle>Peso:{{ package.weight }}</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-card-content class="texto-negro">
+    <ion-card-content>
       <p><strong>Descripción:</strong> {{ package.description }}</p>
       <p><strong>Estatus:</strong> {{ package.status_id }}</p>
     </ion-card-content>
   </ion-card>
   </ng-container>
   <ng-template #noPackages>
-    <p class="texto-negro">No hay paquetes disponibles.</p>
+    <p class="texto-sinpaquetes">No hay paquetes disponibles.</p>
   </ng-template>
 
   <ion-tabs>

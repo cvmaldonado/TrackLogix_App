@@ -1,6 +1,41 @@
-/* styles.scss */
-$opciones-avanzadas-color: #AAD7D9;
+ion-content {
+  --ion-background-color: #E5E1DA;
+  --border-radius: 30px;
+  
+}
 
-ion-button.opciones-avanzadas {
-  --ion-color-base: $opciones-avanzadas-color;
+ion-tab-bar {
+  background-color: #92C7CF;
+}
+
+form {
+  max-width: 450px;
+  background-color: #E5E1DA;
+  width: 100%;
+  height: 50%;
+  margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+
+}
+
+.form-group {
+  margin-bottom: 20px;
+  background-color: #E5E1DA ;
+}
+ion-input {
+  --background: #E5E1DA;
+  --color: #000000;
+}
+
+ion-button {
+  --background: #AAD7D9;
+  --border-radius: 30px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+
 }
