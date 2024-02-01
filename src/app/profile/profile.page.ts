@@ -14,7 +14,7 @@ export class ProfilePage {
         text: ' Delete Account',
         role: 'destructive',
         handler: () => {
-          const confirmation = confirm('Are you sure you want to delete your account?');
+          const confirmation = confirm('CUIDADO!!¿Está seguro de que quiere eliminar su cuenta?');
           if (confirmation) {
             this.deleteAcount();
             this.router.navigate(['/register']);

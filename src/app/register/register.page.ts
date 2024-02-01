@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage {
+  confirmPassword: String = '';
   isAlertOpen = false;
   alertButtons = ['Aceptar'];
 
@@ -26,7 +27,7 @@ export class RegisterPage {
   constructor(private authService: authService, private router: Router ) { }
 
   registerUser() {
-    if(this.isFormValid()){
+    if(this.isFormValid()&& this.userDetails.password === this.confirmPassword){
     this.authService.registerUser(this.userDetails).subscribe(
       (data) => {
         console.log(data);
@@ -35,7 +36,7 @@ export class RegisterPage {
       },
       (error) => {
         this.isAlertOpen = true;
-        console.error('Error SISISISI:', error);
+        console.error('Las contraseñas no coinciden', error);
         
       }
     );
