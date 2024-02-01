@@ -37,6 +37,8 @@ ion-content {
   .texto-negro {
     color: rgba(72, 72, 72);
     text-align: center;
+    font-size: 34px;
+
   }
 
   .texto-sinpaquetes{
@@ -51,7 +53,7 @@ ion-content {
   }
   
   ion-card {
-    --background: #E5E1DA;
+    --background: #FBF9F1;
     --border-radius: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }

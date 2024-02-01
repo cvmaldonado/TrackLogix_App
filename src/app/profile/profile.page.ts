@@ -14,8 +14,11 @@ export class ProfilePage {
         text: ' Delete Account',
         role: 'destructive',
         handler: () => {
-          this.deleteAcount();
-          this.router.navigate(['/register']);
+          const confirmation = confirm('Are you sure you want to delete your account?');
+          if (confirmation) {
+            this.deleteAcount();
+            this.router.navigate(['/register']);
+          }
         },
       },
       {

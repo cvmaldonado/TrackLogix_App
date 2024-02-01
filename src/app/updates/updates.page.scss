@@ -24,10 +24,11 @@ form {
 .form-group {
   margin-bottom: 20px;
   background-color: #E5E1DA ;
+  
 }
 ion-input {
   --background: #E5E1DA;
-  --color: #000000;
+  --color: #4d4444;
 }
 
 ion-button {
@@ -37,5 +38,10 @@ ion-button {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20%;
-
 }
+ion-item {
+  --padding-start: 1px;
+  --background: #E5E1DA;
+  border-color: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+

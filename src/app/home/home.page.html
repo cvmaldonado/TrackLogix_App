@@ -1,25 +1,28 @@
-<ion-header>
-</ion-header>
 
-<ion-content>
+
+<ion-content class="ion-padding">
   <!-- Contenido de tu página de inicio -->
-  
-  <!-- Menú de pestañas en la parte inferior -->
-
-  <ion-tabs>
-    <ion-tab-bar style="background-color: #92C7CF; border: #92C7CF;" slot="bottom">
-      <ion-tab-button style="background-color: #92C7CF;" routerLink="/home">
-        <ion-icon style="color: rgb(52, 52, 52); border-color: #484848; border: 1px;" name="home"></ion-icon>
-        Home
-      </ion-tab-button>
-      <ion-tab-button style="background-color: #92C7CF;" routerLink="/packages">
-        <ion-icon style="color: \rgb(52, 52, 52); border-color: #484848; border: 1px;" name="cube"></ion-icon>
-        Packages
-      </ion-tab-button>
-      <ion-tab-button style="background-color: #92C7CF;" routerLink="/profile">
-        <ion-icon style="color: rgb(52, 52, 52); border-color: #484848; border: 1px;" name="person"></ion-icon>
-        <ion-label>Profile</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+  <div id="container">
+    <img src="../../assets/bienvenido.png" style="width: 180px;">
+    <h1 class="welcome">Bienvenido a TrackLogix</h1>
+    <p>Disfruta de la experiencia que hemos preparado para ti.</p>
+  </div>
 </ion-content>
+
+<!-- Menú de pestañas en la parte inferior -->
+<ion-tabs>
+  <ion-tab-bar style="background-color: #92C7CF; border: #92C7CF;" slot="bottom">
+    <ion-tab-button style="background-color: #92C7CF;" routerLink="/home">
+      <ion-icon style="color: rgb(52, 52, 52); border-color: #484848; border: 1px;" name="home"></ion-icon>
+      Home
+    </ion-tab-button>
+    <ion-tab-button style="background-color: #92C7CF;" routerLink="/packages">
+      <ion-icon style="color: \rgb(52, 52, 52); border-color: #484848; border: 1px;" name="cube"></ion-icon>
+      Packages
+    </ion-tab-button>
+    <ion-tab-button style="background-color: #92C7CF;" routerLink="/profile">
+      <ion-icon style="color: rgb(52, 52, 52); border-color: #484848; border: 1px;" name="person"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
