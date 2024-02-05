@@ -1,0 +1,37 @@
+/* login.page.scss */
+
+/* Estilos para el fondo */
+ion-content {
+    --background: linear-gradient(135deg, #92C7CF, #fce8c6);
+    
+  }
+
+    /* Estilos para la bienvenida */
+
+
+  
+  ion-button {
+    --background: #AAD7D9;
+    --border-radius: 30px;
+    width: 75%;
+  }
+  
+  
+
+  .register-link {
+    color: #AAD7D9; 
+    cursor: pointer; 
+    text-decoration: underline; 
+    font-weight: bold; 
+  }
+  
+  ion-card {
+  --background: #E5E1DA;
+  --color: #2c524c;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  height: 100%;
+  margin: center;
+  margin-top: 50px;
+
+}

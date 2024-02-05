@@ -32,6 +32,10 @@ const routes: Routes = [
     path: 'updates',
     loadChildren: () => import('./updates/updates.module').then( m => m.UpdatesPageModule)
   },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
 
 ];
 

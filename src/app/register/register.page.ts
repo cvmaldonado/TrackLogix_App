@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterPage {
   confirmPassword: String = '';
+  isPassMatchAlert: boolean = false;
   isAlertOpen = false;
   alertButtons = ['Aceptar'];
 
@@ -27,23 +28,28 @@ export class RegisterPage {
   constructor(private authService: authService, private router: Router ) { }
 
   registerUser() {
-    if(this.isFormValid()&& this.userDetails.password === this.confirmPassword){
-    this.authService.registerUser(this.userDetails).subscribe(
-      (data) => {
-        console.log(data);
-        this.router.navigateByUrl('/login'); // redirige a la página de inicio de sesión
-        
-      },
-      (error) => {
-        this.isAlertOpen = true;
-        console.error('Las contraseñas no coinciden', error);
-        
+    if (this.isFormValid()) {
+      if (this.userDetails.password === this.confirmPassword) {
+        this.authService.registerUser(this.userDetails).subscribe(
+          (data) => {
+            console.log(data);
+            this.router.navigateByUrl('/login');
+          },
+          (error) => {
+            this.isAlertOpen = true;
+            console.error('Error:', error);
+          }
+        );
+      } else {
+        this.isPassMatchAlert = true;
+        console.error('Las contraseñas no coinciden');
       }
-    );
-  } else {
-    this.isAlertOpen = true;
-  }
-}
+    } else {
+      this.isAlertOpen = true;
+      console.error('Por favor, complete todos los campos');
+    }
+  }  
+
 isFormValid(): boolean {
   return !!(
     this.userDetails.name &&
